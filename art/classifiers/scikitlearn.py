@@ -50,8 +50,8 @@ def SklearnClassifier(model, clip_values=None, defences=None, preprocessing=(0, 
             be divided by the second one.
     :type preprocessing: `tuple`
     """
-    if model.__class__.__module__.split('.')[0] != 'sklearn':
-        raise TypeError("Model is not an sklearn model. Received '%s'" % model.__class__)
+    #if model.__class__.__module__.split('.')[0] != 'sklearn':
+    #    raise TypeError("Model is not an sklearn model. Received '%s'" % model.__class__)
     sklearn_name = model.__class__.__name__
     module = importlib.import_module('art.classifiers.scikitlearn')
     if hasattr(module, 'Scikitlearn%s' % sklearn_name):
