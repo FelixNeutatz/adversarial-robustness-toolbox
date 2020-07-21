@@ -164,6 +164,8 @@ class ScikitlearnClassifier(Classifier):
             _input_shape = (model.support_vectors_.shape[1],)
         elif hasattr(model, 'steps'):
             _input_shape = self._get_input_shape(model.steps[0][1])
+        elif hasattr(model, 'sigma_'):
+            _input_shape = (model.sigma_.shape[1],)
         else:
             logger.warning('Input shape not recognised. The model might not have been fitted.')
             _input_shape = None
